@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Verificação 2FA</h2>
+                    
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endwith %}
+
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Código do Autenticador</label>
+                            <input type="text" 
+                                   name="code" 
+                                   class="form-control" 
+                                   placeholder="6 dígitos"
+                                   required
+                                   autofocus>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Verificar</button>
+                    </form>
+                    <div class="alert alert-info mt-3">
+                        <p>Problemas com o código?</p>
+                        <ol>
+                            <li>Atualize seu app autenticador (puxe para baixo)</li>
+                            <li>Verifique o horário do seu celular</li>
+                            <li>Chave secreta: <code>{{ current_user.secret_2fa }}</code></li>
+                        </ol>
+                    </div>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

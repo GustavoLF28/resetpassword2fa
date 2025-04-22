@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="text-center mb-4">Redefinir Senha</h4>
+                    
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Digite seu email:</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Continuar</button>
+                    </form>
+                    
+                    <div class="mt-3 text-center">
+                        <a href="{{ url_for('login') }}">Voltar ao Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

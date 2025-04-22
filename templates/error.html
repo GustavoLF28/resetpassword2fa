@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-danger">
+        <h2>Erro Interno</h2>
+        <p>Desculpe, algo deu errado. A equipe foi notificada.</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">
+            Voltar ao Login
+        </a>
+    </div>
+</div>
+{% endblock %}
