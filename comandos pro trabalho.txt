@@ -1,0 +1,38 @@
+pip install
+
+pip install Flask
+pip install Flask-SQLAlchemy
+pip install Flask-Login
+pip install pyotp
+pip install qrcode
+pip install werkzeug
+
+
+pip install 2 (caso não de)
+
+# Instale todas as dependências necessárias
+pip install flask flask-sqlalchemy flask-login pyotp qrcode[pil] pillow werkzeug
+
+# Caso queira instalar uma versão específica (recomendado para evitar conflitos)
+pip install flask==2.3.2 flask-sqlalchemy==3.0.3 flask-login==0.6.2 pyotp==2.8.0 qrcode[pil]==7.4.2 pillow==10.0.0 werkzeug==2.3.6
+
+
+
+
+executar as imigrações
+
+flask shell
+>>> from app import db
+>>> db.create_all()
+>>> exit()
+
+
+reiniciar o servidor
+flask run --debug
+
+
+
+http://127.0.0.1:5000/login
+
+http://127.0.0.1:5000/register
+
